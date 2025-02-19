@@ -1,24 +1,32 @@
-## Kafka Migration
+# Kafka Migration
 
-### Setup
+## Requirements
+- Python >= 3.11
+- Poetry
+- Make
+- SQLite3
+
+## Installation
 ```bash
+pyenv install $(cat .python-version)
+poetry config virtualenvs.in-project true
 poetry install
 ```
 
-### Migrating Schema Registry
+## Migrating Schema Registry
 
-- Exporting Schemas
+#### Exporting Schemas
 ```shell
 make migrate
 SCHEMA_REGISTRY_URL=http://your-source-registry:8081 ./01-dump-registry.py
 ```
 
-- Migrating Schemas
+#### Migrating Schemas
 ```shell
 SCHEMA_REGISTRY_URL=http://your-target-registry:8081 ./02-migrate-to.py
 ```
 
-- Environment Variables
+#### Environment Variables
 
 | Name                       | Description              |
 | ---------------------------| ------------------------ |
