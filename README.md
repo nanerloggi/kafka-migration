@@ -19,6 +19,7 @@ SCHEMA_REGISTRY_URL=http://your-target-registry:8081 ./02-migrate-to.py
 ```
 
 - Environment Variables
+
 | Name                       | Description              |
 | ---------------------------| ------------------------ |
 | `SCHEMA_REGISTRY_URL`      | Registry URL             |
